@@ -5,10 +5,11 @@ with open("movies.txt", "r") as file:
     str2 = file.readline()
     str3 = file.readline()
 films = [str1, str2, str3]
+# открывает текстовый док, считываем построчно
 
-print(films[2])
 def changeBut(event):
     event.widget["background"] = "red"
+# виджет, кнопочка меняется на красную
 
 def for_knopki():
     root = Tk()
@@ -50,12 +51,11 @@ def kino():
                      command=for_knopki
                      )
         but.pack()
-print(str1)
+
 nameq = []
 
 for s in films:
     name = s
-    print(name)
     nameq.append(name)
 root = Tk()
 root.geometry("400x189")
