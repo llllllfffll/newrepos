@@ -1,5 +1,12 @@
 from tkinter import *
 
+with open("movies.txt", "r") as file:
+    str1 = file.readline()
+    str2 = file.readline()
+    str3 = file.readline()
+films = [str1, str2, str3]
+
+print(films[2])
 def changeBut(event):
     event.widget["background"] = "red"
 
@@ -39,25 +46,22 @@ def kino():
                      padx="40",  # отступ от границ до содержимого по горизонтали
                      pady="8",  # отступ от границ до содержимого по вертикали
                      font="16",  # высота шрифта
-                     width="12",  # ширина кнопки
+                     width="12",  # ширина кнопки-
                      command=for_knopki
                      )
         but.pack()
-
+print(str1)
 nameq = []
 
-
-
-
-
-for q in range(10):
-    name = "Кинозал №" + str(q)
+for s in films:
+    name = s
+    print(name)
     nameq.append(name)
 root = Tk()
-root.geometry("400x138")
+root.geometry("400x189")
 root.title("Сеансы на фильмы")
 for q in range(3):
-    but = Button(root, text=nameq[q],  # текст кнопки
+    but = Button(root, text=films[q],  # текст кнопки
                 background="#ccc",  # фоновый цвет кнопки
                 foreground="#555",  # цвет текста
                 padx="400",  # отступ от границ до содержимого по горизонтали
@@ -67,7 +71,6 @@ for q in range(3):
                 command=kino
                 )
     but.pack()
-
 
 board = list(range(1, 10))
 root.mainloop()
